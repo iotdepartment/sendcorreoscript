@@ -1,12 +1,12 @@
-import paho.mqtt.client as mqtt 
-import json 
-import smtplib 
-from email.mime.multipart import MIMEMultipart 
-from email.mime.text import MIMEText 
-from email.mime.base import MIMEBase 
-from email import encoders 
-import time 
-
+# -*- coding: utf-8 -*-
+import paho.mqtt.client as mqtt
+import json
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+import time
 
 # -----------------------------
 # EXTRAE LA INFO DEL MQTT
@@ -64,7 +64,7 @@ def on_message(client, userdata, msg):
       
             enviar_correo(userdata['DESTINATARIO'], userdata['CUERPO']) # Envia el correo
             
-        # Limpiar los datos después de enviar el correo
+        # Limpiar los datos despues de enviar el correo
             userdata.clear()
 
 
